@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+    <field name="email">
+        <field-validator type="requiredstring">
+            <message>邮箱不能为空</message>
+        </field-validator>
+        <field-validator type="email">
+            <message>邮箱格式不正确</message>
+        </field-validator>
+    </field>
+    <field name="code">
+        <field-validator type="requiredstring">
+            <message>验证码不能为空</message>
+        </field-validator>
+        <field-validator type="int">
+            <message>验证码格式不正确</message>
+        </field-validator>
+
+
+
+    </field>
+    <field name="password">
+        <field-validator type="requiredstring">
+            <message>密码不能为空</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">6</param>
+            <param name="maxLength">25</param>
+            <message>请输入6-25位密码</message>
+        </field-validator>
+    </field>
+
+</validators>

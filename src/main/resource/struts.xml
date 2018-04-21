@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+
+
+    <constant name="struts.devMode" value="true"></constant>
+
+    <package name="struts2" extends="struts-default" namespace="/">
+
+        <!--首页访问的action-->
+        <action name="index" class="indexAction" method="execute">
+
+            <result name="index">/jsp/index.jsp</result>
+            <result name="success">/jsp/index.jsp</result>
+        </action>
+
+        <!--生成注册码-->
+        <action name="gencode" class="userAction" method="genCode">
+        </action>
+        <!--注册页面跳转action-->
+        <action name="register" class="userAction" method="regPage">
+            <result name="register">/jsp/register.jsp</result>
+        </action>
+        <!--注册校验-->
+        <action name="regcheck" class="userAction" method="regCheck">
+            <result name="success">/</result>
+            <result name="input">/jsp/register.jsp</result>
+        </action>
+    </package>
+</struts>
